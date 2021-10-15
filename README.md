@@ -1,4 +1,4 @@
 # Logic-gates
-Just cpp program who calculates logic gates.
+Just a cpp program who calculates logic gates.
 
 ![Alt text](https://github.com/spanishkukli/logic-gates/blob/main/img/logic-gates-types.jpg)
