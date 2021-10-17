@@ -1,90 +1,48 @@
 #include <iostream>
+#include <string>
+// #include <array>    
 #include "logic-gates.h"
 
-void drawresults() {
-    printf("NOT \n");
-    printf("+-i-+-o-+\n");
-    printf("| 0 | %i |\n", _not(0));
-    printf("+---+---+\n");
-    printf("| 1 | %i |\n", _not(1));
-    printf("+---+---+\n");
-    printf("\n");
+using namespace std;
 
-    printf("AND \n");
+void drawresults(bool (*func) (bool, bool)) {
     printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _and(0, 0));
+    printf("| 0  | 0  | %i |\n", func(0, 0));
     printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _and(0, 1));
+    printf("| 0  | 1  | %i |\n", func(0, 1));
     printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _and(1, 0));
+    printf("| 1  | 0  | %i |\n", func(1, 0));
     printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _and(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
-
-    printf("OR \n");
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _or(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _or(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _or(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _or(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
-
-    printf("XOR \n");
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _xor(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _xor(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _xor(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _xor(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
-
-    printf("NAND \n");
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _nand(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _nand(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _nand(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _nand(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
-
-    printf("NOR \n");
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _nor(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _nor(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _nor(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _nor(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
-
-    printf("XNOR \n");
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", _xnor(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", _xnor(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", _xnor(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", _xnor(1, 1));
+    printf("| 1  | 1  | %i |\n", func(1, 1));
     printf("+----+----+---+\n");
     printf("\n");
 }
 
-
 int main() {
-    drawresults();
+    printf("AND \n");
+    drawresults(_and);
+
+    printf("OR \n");
+    drawresults(_or);
+
+    printf("XOR \n");
+    drawresults(_xor);
+
+    printf("NAND \n");
+    drawresults(_nand);
+
+    printf("NOR \n");
+    drawresults(_nor);
+
+    printf("XNOR \n");
+    drawresults(_xnor);
+
+    // !
+    // array<string, 6> funcs = {"_and", "_or", "_xor", "_nand", "_nor", "_xnor"};
+    // for (size_t i = 0; i < funcs.size(); i++) {
+    //     string actual_func = funcs.at(i);
+    //     drawresults(actual_func);
+    // }
+    // !
     return 0;
 }
