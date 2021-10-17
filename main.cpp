@@ -39,6 +39,11 @@ int main() {
 
     // !
     // array<string, 6> funcs = {"_and", "_or", "_xor", "_nand", "_nor", "_xnor"};
+
+    // for (string i : myvector) {
+    //     drawresults(i);
+    // }
+
     // for (size_t i = 0; i < funcs.size(); i++) {
     //     string actual_func = funcs.at(i);
     //     drawresults(actual_func);
