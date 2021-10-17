@@ -40,7 +40,7 @@ int main() {
     // !
     // array<string, 6> funcs = {"_and", "_or", "_xor", "_nand", "_nor", "_xnor"};
 
-    // for (string i : myvector) {
+    // for (string i : funcs) {
     //     drawresults(i);
     // }
 
