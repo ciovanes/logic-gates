@@ -6,16 +6,15 @@
 using namespace std;
 
 void drawresults(bool (*func) (bool, bool)) {
-    printf("+-i1-+-i2-+-o-+\n");
-    printf("| 0  | 0  | %i |\n", func(0, 0));
-    printf("+----+----+---+\n");
-    printf("| 0  | 1  | %i |\n", func(0, 1));
-    printf("+----+----+---+\n");
-    printf("| 1  | 0  | %i |\n", func(1, 0));
-    printf("+----+----+---+\n");
-    printf("| 1  | 1  | %i |\n", func(1, 1));
-    printf("+----+----+---+\n");
-    printf("\n");
+    printf("+-i1-+-i2-+-o-+\n"
+            "| 0  | 0  | %i |\n"
+            "+----+----+---+\n"
+            "| 0  | 1  | %i |\n"
+            "+----+----+---+\n"
+            "| 1  | 0  | %i |\n"
+            "+----+----+---+\n"
+            "| 1  | 1  | %i |\n"
+            "+----+----+---+\n", func(0, 0), func(0, 1), func(1, 0), func(1, 1));
 }
 
 int main() {
